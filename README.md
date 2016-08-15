@@ -11,4 +11,8 @@ Inspired by No Man's Sky, the goal is to copy systems in the game to see if it's
 ## Working
 Planet generator currently generates planet names.
 ## Not Working
+<<<<<<< HEAD
 Almost everything else
+=======
+Almost everything else
+>>>>>>> 6d28099f27edcc6ba15f46b542461f94d62e1046
