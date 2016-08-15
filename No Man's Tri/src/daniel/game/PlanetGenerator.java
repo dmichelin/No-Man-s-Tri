@@ -19,7 +19,7 @@ public class PlanetGenerator {
 				"Indescribable", "Infernous"
 				};
 		middleNames = new String[]{"Babylon","Perseus", "Washington", "Vishnu", "Ghandi", "Jackson", "Abd-Allah", "Prometheus"};
-		finalNames = new String[]{"Prime", "Omega", "Tau", "Alif", "Baa"};
+		finalNames = new String[]{"Prime", "Omega", "Tau", "Alpha", "Beta"};
 	}
 	public Planet generatePlanet(int planetsTravelledTo){
 		Random gen = new Random();
