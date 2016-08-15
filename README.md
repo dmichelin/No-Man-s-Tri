@@ -9,6 +9,6 @@ Inspired by No Man's Sky, the goal is to copy systems in the game to see if it's
 5. A primitive story line
 
 ## Working
-Currently generates planet names
+Planet generator currently generates planet names.
 ## Not Working
 Almost everything else
