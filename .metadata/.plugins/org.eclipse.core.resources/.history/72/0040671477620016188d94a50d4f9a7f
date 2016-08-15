@@ -1,0 +1,26 @@
+/**
+ * 
+ */
+package daniel.game;
+
+/**
+ * @author Daniel
+ * This is where the game actually launches. Contained in this 
+ */
+public class Main {
+
+	
+	public static void main(String[] args) {
+		System.out.println(" _   _        ___  ___            _       _____    _ ");
+		System.out.println("| \\ | |       |  \\/  |           ( )     |_   _|  (_)");
+		System.out.println("|  \\| | ___   | .  . | __ _ _ __ |/ ___    | |_ __ _ ");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		Game game = new Game();
+		game.run();
+
+	}
+
+}
