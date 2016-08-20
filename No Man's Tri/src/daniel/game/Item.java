@@ -1,11 +1,24 @@
 package daniel.game;
 
-public abstract class Item {
+public class Item {
 	// Item attribute
 	private float price;
 	private String name;
+	private String description;
 	
-	public abstract void use();
+	public Item(String name, float price, String description){
+		this.price = price;
+		this.name = name;
+		this.description = description;
+	}
+	
+	public boolean isUseable(){
+		return false;
+	};
+	
+	public boolean isConsumable(){
+		return false;
+	}
 
 	public float getPrice() {
 		return price;

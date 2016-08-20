@@ -18,6 +18,7 @@ public class Player {
 	private List<Item> inventory; // Default value is 10
 	private int maxInventorySize; // Default is 10
 	private int distanceTravelled;
+	private Item equippedItem;
 	
 	/**
 	 *  For constructing a player, default values are for name and age only
@@ -110,9 +111,71 @@ public class Player {
 		}
 		return false;
 	}
+	/**
+	 * Returns the health of the player
+	 * @return
+	 */
 	public int getHealth() {
 		return health;
 	}
 	
-
+	/**
+	 * Uses the item on the character
+	 * @param item the item to use
+	 * @return Returns if the item was successfully used
+	 */
+	
+	public boolean useItem(Item item){
+		if(!item.isUseable())
+		{
+			return false;
+		}
+		else
+		{
+			// DO STUFF
+			
+			if(item.isConsumable()){
+				discardItem(item);
+			}
+			return true;
+		}
+		
+	}
+	public Item getEquippedItem() {
+		return equippedItem;
+	}
+	/**
+	 * Sets an item to be equipped and removes it from the inventory
+	 * @param equippedItem The item to be equipped
+	 */
+	public void setEquippedItem(Item equippedItem) {
+		this.equippedItem = getItem(equippedItem);
+		inventory.remove(equippedItem);
+	}
+	
+	public void unequip(){
+		if(equippedItem!=null){
+			inventory.add(equippedItem);
+			equippedItem=null;
+		}
+	}
+	
+	/**
+	 * Returns the inventory
+	 * @return
+	 */
+	public List<Item> getInventory() {
+		return inventory;
+	}
+	/**
+	 * 
+	 */
+	public boolean hasItem(String item){
+		for(Item i : inventory){
+			if(i.getName().contentEquals(item)){
+				return true;
+			}
+		}
+		return false;
+	}
 }

@@ -1,0 +1,99 @@
+/**
+ * 
+ */
+package daniel.game;
+
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @author Daniel
+ *
+ */
+public class Game {
+	private Player player;
+	private Scanner playerInput;
+	int planetsTravelledTo;
+	int distanceTravelled;
+	private Planet currentPlanet;
+	private PlanetGenerator planetGenerator;
+	private boolean shouldGeneratePlanet;
+	
+	public Game(){
+		playerInput = new Scanner(System.in);
+		player = new Player();
+		distanceTravelled = 0;
+		planetsTravelledTo =1;
+		planetGenerator = new PlanetGenerator();
+		shouldGeneratePlanet = true;
+	}
+	public void run(){
+		boolean gameNotEnded = true;
+		while(gameNotEnded)
+		{
+			clearScreen();
+			currentPlanet = planetGenerator.generatePlanet(planetsTravelledTo);
+			showStatus();
+			gameNotEnded = handleInput();
+			distanceTravelled++;
+			planetsTravelledTo++;
+		}
+	}
+	/**
+	 * Method to clear the console. Current implementation works, but is not ideal
+	 */
+	public static void clearScreen(){
+		System.out.print("\033[H\033[2J");  
+	    System.out.flush();  
+	}
+	/**
+	 * Displays the players attributes
+	 */
+	private void showStatus(){
+		System.out.println("Health: "+player.getHealth());
+		System.out.println("Money: "+player.getMoney());
+		System.out.println("Currently On: "+ currentPlanet.getName()+". It is a "+currentPlanet.getType()+" planet");
+		System.out.println("Distance Travelled: "+ distanceTravelled + " Light Years");
+	}
+	
+	private boolean isPlayerAlive(){
+		return player.getHealth()<=0;
+	}
+	
+	private boolean handleInput(){
+		System.out.println("");
+		System.out.println("What would you like to do?");
+		System.out.println("");
+		System.out.println("Travel to new planet: t");
+		System.out.println("Show inventory: s");
+		System.out.println("Quit game: q");
+		System.out.println("");
+		String response = playerInput.nextLine();
+		
+		switch(playerInput.nextLine().toLowerCase()){
+		
+			case "t":
+				shouldGeneratePlanet = true;
+				return true;
+			case "s":
+				List<Item> inventory = player.getInventory();
+				if(!inventory.isEmpty())
+				{
+					for(Item i : inventory){
+						System.out.println(i.getName());
+					}
+				}else{
+					System.out.println("Your inventory is empty");
+				}
+				shouldGeneratePlanet = false;
+				return true;
+			case "q":
+				return false;
+			
+		}
+		
+		return false;
+	}
+
+}

@@ -24,7 +24,7 @@ public class PlanetGenerator {
 	public Planet generatePlanet(int planetsTravelledTo){
 		Random gen = new Random();
 		String name = generatePlanetName();
-		return new Planet(name,planetTypes[gen.nextInt(planetTypes.length)]);
+		return new Planet(name,planetTypes[gen.nextInt(Math.min(planetsTravelledTo,planetTypes.length))]);
 	}
 	/**
 	 * Generates a name for a planet

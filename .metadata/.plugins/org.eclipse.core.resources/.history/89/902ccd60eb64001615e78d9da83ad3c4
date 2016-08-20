@@ -1,0 +1,70 @@
+/**
+ * 
+ */
+package daniel.game;
+
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+
+/**
+ * @author Daniel
+ *
+ */
+public class Game {
+	private Player player;
+	private Scanner playerInput;
+	int planetsTravelledTo;
+	int distanceTravelled;
+	private Planet currentPlanet;
+	private PlanetGenerator planetGenerator;
+	
+	public Game(){
+		playerInput = new Scanner(System.in);
+		player = new Player();
+		distanceTravelled = 0;
+		planetGenerator = new PlanetGenerator();
+	}
+	public void run(){
+		boolean gameNotEnded = true;
+		while(gameNotEnded)
+		{
+			clearScreen();
+			currentPlanet = planetGenerator.generatePlanet(planetsTravelledTo);
+			showStatus();
+			gameNotEnded = handleInput();
+			distanceTravelled++;
+		}
+	}
+	/**
+	 * Method to clear the console. Current implementation works, but is not ideal
+	 */
+	public static void clearScreen(){
+		System.out.print("\033[H\033[2J");  
+	    System.out.flush();  
+	}
+	/**
+	 * Displays the players attributes
+	 */
+	private void showStatus(){
+		System.out.println("Health: "+player.getHealth());
+		System.out.println("Money: "+player.getMoney());
+		System.out.println("Currently On: "+ currentPlanet.getName()+". It is a "+currentPlanet.getType()+" planet");
+		System.out.println("Distance Travelled: "+ distanceTravelled + " Light Years");
+	}
+	
+	private boolean isPlayerAlive(){
+		return player.getHealth()<=0;
+	}
+	
+	private boolean handleInput(){
+		System.out.println("Would you like to go to a new planet?");
+		String response = playerInput.nextLine();
+		
+		if(response.equals("y")){
+			return true;
+		}
+		
+		else return false;
+	}
+
+}
