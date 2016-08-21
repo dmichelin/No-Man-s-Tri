@@ -76,7 +76,7 @@ public class Market {
 		List<Item> localMarket = new ArrayList<Item>();
 		Random rand = new Random();
 		for(Item i : globalMarket){
-			if(i.getPrice()<=rand.nextInt(330)){
+			if(i.getPrice()<=rand.nextInt(300)){
 				localMarket.add(i);
 			}
 		}

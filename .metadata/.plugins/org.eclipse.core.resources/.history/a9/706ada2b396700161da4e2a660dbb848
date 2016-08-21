@@ -20,8 +20,6 @@ public class Game {
 	private Planet currentPlanet;
 	private PlanetGenerator planetGenerator;
 	private boolean shouldGeneratePlanet;
-	private Market market;
-	private List<Item> localMarket;
 	
 	public Game(){
 		playerInput = new Scanner(System.in);
@@ -30,8 +28,6 @@ public class Game {
 		planetsTravelledTo =1;
 		planetGenerator = new PlanetGenerator();
 		shouldGeneratePlanet = true;
-		market = new Market();
-		localMarket = market.getLocalMarket();
 	}
 	public void run(){
 		boolean gameNotEnded = true;
@@ -78,10 +74,9 @@ public class Game {
 		System.out.println("");
 		System.out.println("Travel to new planet: t");
 		System.out.println("Show inventory: s");
+		System.out.println("Quit game: q");
 		System.out.println("Mine a resource: m");
 		System.out.println("Equip an item from inventory: e");
-		System.out.println("Access the Galactic Market: g");
-		System.out.println("Quit game: q");
 		System.out.println("");
 		
 		
@@ -132,14 +127,7 @@ public class Game {
 				}
 				shouldGeneratePlanet = false;
 				return true;
-			// Displays all available resources from the local market
-			case "g":
-				clearScreen();
-				for(Item i: localMarket){
-					System.out.println(i.getName() + " - $"+i.getPrice());
-				}
-				shouldGeneratePlanet = false;
-				return true;
+
 			
 		}
 		
@@ -154,7 +142,6 @@ public class Game {
 			currentPlanet = planetGenerator.generatePlanet(planetsTravelledTo);
 			distanceTravelled+=distanceGenerator.nextInt(500) ;
 			planetsTravelledTo++;
-			localMarket = market.createLocalMarket();
 		}
 		
 	}

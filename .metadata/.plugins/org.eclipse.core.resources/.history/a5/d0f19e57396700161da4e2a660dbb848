@@ -78,10 +78,10 @@ public class Game {
 		System.out.println("");
 		System.out.println("Travel to new planet: t");
 		System.out.println("Show inventory: s");
+		System.out.println("Quit game: q");
 		System.out.println("Mine a resource: m");
 		System.out.println("Equip an item from inventory: e");
 		System.out.println("Access the Galactic Market: g");
-		System.out.println("Quit game: q");
 		System.out.println("");
 		
 		
@@ -136,10 +136,9 @@ public class Game {
 			case "g":
 				clearScreen();
 				for(Item i: localMarket){
-					System.out.println(i.getName() + " - $"+i.getPrice());
+					System.out.println(i.getName());
 				}
-				shouldGeneratePlanet = false;
-				return true;
+
 			
 		}
 		

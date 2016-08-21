@@ -9,10 +9,8 @@ Inspired by No Man's Sky, the goal is to copy systems in the game to see if it's
 5. A primitive story line
 
 ## Working
-Planet generator currently generates planet names.
+Planet generator currently generates planet names and conditions. A market system is in place with minable resources and generates a basic local market. Player inventory and equipping works.
 ## Not Working
-<<<<<<< HEAD
+
 Almost everything else
-=======
-Almost everything else
->>>>>>> 6d28099f27edcc6ba15f46b542461f94d62e1046
+

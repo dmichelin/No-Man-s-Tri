@@ -61,27 +61,22 @@ public class Market {
 		return globalMarket;
 	}
 	
-	public List<Item> getGlobalMarket() {
-		return globalMarket;
-	}
-	public List<Item> getLocalMarket() {
-		return localMarket;
-	}
 	/**
 	 * Creates a new market for each locale. Simply grabs an item out of the global market database and generates
 	 * it using a range of values
 	 * @return
 	 */
-	public List<Item> createLocalMarket(){
+	private List<Item> createLocalMarket(){
 		List<Item> localMarket = new ArrayList<Item>();
 		Random rand = new Random();
 		for(Item i : globalMarket){
-			if(i.getPrice()<=rand.nextInt(330)){
+			if(i.getPrice()<=rand.nextInt(300)){
 				localMarket.add(i);
 			}
 		}
 		return localMarket;
 	}
+	
 	
 
 }
