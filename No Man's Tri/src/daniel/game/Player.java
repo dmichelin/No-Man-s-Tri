@@ -72,17 +72,21 @@ public class Player {
 	 * @return
 	 */
 	public boolean addItem (Item item){
+		inventory.add(item);
+		return true;
 		
-			// If the inventory cannot contain the item, return false
-			if(inventory.size() >= maxInventorySize)
-			{
-				return false;
-			}
-			// Otherwise add the item
-			else{
-				inventory.add(item);
-				return true;
-			}
+		// This code will be included with the actual game and is commented out for testing purposes
+		
+//			// If the inventory cannot contain the item, return false
+//			if(inventory.size() >= maxInventorySize)
+//			{
+//				return false;
+//			}
+//			// Otherwise add the item
+//			else{
+//				inventory.add(item);
+//				return true;
+//			}
 		}
 	/**
 	 * Provides access to inventory items
@@ -178,4 +182,5 @@ public class Player {
 		}
 		return false;
 	}
+	
 }

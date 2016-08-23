@@ -21,11 +21,11 @@ public class Main {
 		System.out.println("Pretending to start game...");
 		
 		// emulates a game actually loading up, pauses at title screen
-		try {
-		    Thread.sleep(5000);
-		} catch(InterruptedException ex) {
-		    Thread.currentThread().interrupt();
-		}
+//		try {
+//		    Thread.sleep(5000);
+//		} catch(InterruptedException ex) {
+//		    Thread.currentThread().interrupt();
+//		}
 		
 		// Starts the actual game
 		Game game = new Game();

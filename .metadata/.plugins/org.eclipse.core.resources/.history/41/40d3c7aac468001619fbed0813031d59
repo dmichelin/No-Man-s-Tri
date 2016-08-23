@@ -1,0 +1,21 @@
+package daniel.game;
+
+import java.util.List;
+
+public class Blueprint extends Item {
+	
+	List<Item> itemsRequired;
+	Item output;
+	
+	public Blueprint(String name, float price, String description,List<Item> recipiesNeeded, Item itemToMake) {
+	super(name,price,description);
+	
+	}
+	
+	@Override 
+	public boolean isSellable(){
+		return false;
+	}
+	
+	public Item craft
+}

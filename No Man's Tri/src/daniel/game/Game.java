@@ -124,6 +124,7 @@ public class Game {
 					int count = 0;
 					for(Item i : inventory1){
 						System.out.println(count + " - " + i.getName());
+						count++;
 					}
 					System.out.println("What would you like to equip?");
 					player.setEquippedItem(player.getInventory().get(playerInput.nextInt()));
@@ -140,7 +141,32 @@ public class Game {
 				}
 				shouldGeneratePlanet = false;
 				return true;
+			// Tests crafting
+			case "c":
+				for(int i = 0; i<50;i++){
+					player.addItem(market.globalMarket.get("Carbon"));
+				}
+				Blueprint print = (Blueprint) market.globalMarket.get("SuspensionFluidBlueprint");
+				
+				Item item = print.craft(player);
 			
+				player.addItem(item);
+				
+				for(int i = 0; i<50;i++){
+					player.addItem(market.globalMarket.get("Plutonium"));
+				}
+				
+				
+				
+				print = (Blueprint) market.globalMarket.get("ElectronVaporBlueprint");
+				System.out.println(print.getName());
+				item = print.craft(player);
+				//System.out.println(item.getName());
+				System.out.println(market.globalMarket.get("Electron Vapor").getName());
+				player.addItem(item);
+				
+				shouldGeneratePlanet = false;
+				return true;
 		}
 		
 		return false;

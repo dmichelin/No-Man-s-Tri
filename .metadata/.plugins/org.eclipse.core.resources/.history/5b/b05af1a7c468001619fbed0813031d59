@@ -1,0 +1,34 @@
+package daniel.game;
+
+public class Item {
+	// Item attribute
+	private float price;
+	private String name;
+	private String description;
+	
+	public Item(String name, float price, String description){
+		this.price = price;
+		this.name = name;
+		this.description = description;
+	}
+	
+	public boolean isUseable(){
+		return false;
+	};
+	
+	public boolean isConsumable(){
+		return false;
+	}
+
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+	public String getName() {
+		return name;
+	}
+}

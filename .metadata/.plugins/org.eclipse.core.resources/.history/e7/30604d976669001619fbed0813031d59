@@ -1,0 +1,28 @@
+package daniel.game;
+
+import java.util.List;
+
+public class Blueprint extends Item {
+	
+	List<Item> itemsRequired;
+	Item output;
+	
+	public Blueprint(String name, float price, String description,List<Item> itemsNeeded) {
+		super(name,price,description);
+		this.itemsRequired= itemsNeeded;
+	}
+	
+	@Override 
+	public boolean isSellable(){
+		return false;
+	}
+	
+	public Item craft(Player player){
+		List<Item> inventory = player.getInventory();
+		if(inventory.containsAll(itemsRequired)){
+			inventory.removeAll(itemsRequired);
+			return output;
+		}
+		else return null;
+	}
+}

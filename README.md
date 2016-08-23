@@ -9,8 +9,7 @@ Inspired by No Man's Sky, the goal is to copy systems in the game to see if it's
 5. A primitive story line
 
 ## Working
-Planet generator currently generates planet names and conditions. A market system is in place with minable resources and generates a basic local market. Player inventory and equipping works.
-## Not Working
+Planet generator currently generates planet names and conditions. A market system is in place with minable resources and generates a basic local market. Player inventory and equipping works. Crafting works and will be player available shortly
 
-Almost everything else
-
+## What's going to be on the next update?
+I'll have it so the player remembers blueprints and can select them from their inventory or a secondary blueprint inventory. Aliens will also be included, as well as the first "mission" that No Man's Sky gives

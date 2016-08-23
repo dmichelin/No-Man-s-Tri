@@ -12,12 +12,20 @@ public class Item {
 		this.description = description;
 	}
 	
+	public String getDescription() {
+		return description;
+	}
+
 	public boolean isUseable(){
 		return false;
 	};
 	
 	public boolean isConsumable(){
 		return false;
+	}
+	
+	public boolean isSellable(){
+		return true;
 	}
 
 	public float getPrice() {

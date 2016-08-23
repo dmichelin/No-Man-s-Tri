@@ -1,0 +1,102 @@
+/**
+ * 
+ */
+package daniel.game;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+/**
+ * @author Daniel
+ * This class provides the market mechanics for the game
+ */
+public class Market {
+	List<Item> globalMarket;
+	List<Item> localMarket;
+	public Market(){
+		globalMarket = fetchGlobalMarket();
+		createLocalMarket();
+	}
+	/**
+	 * Fetches a permanent list of all available resources in the world. Could be later refactored to generate the list
+	 * from an XML file
+	 * @return
+	 */
+	private List<Item> fetchGlobalMarket() {
+		List<Item> globalMarket = new ArrayList<Item>();
+		//Uses all resources from No Man's Sky, according to here http://nomanssky.gamepedia.com/Resource
+		
+		//Oxides
+		globalMarket.add(new Item("Iron",10,"A common oxide, found in all sorts of creations"));
+		globalMarket.add(new Item("Zinc",40,"An uncommon metal, found in many electronic components and defensive devices"));
+		globalMarket.add(new Item("Titanium",60,"An uncommon metal, found in many electronic components and defensive devices"));
+		
+		//Silicates
+		globalMarket.add(new Item("Heridium",30,"A common silicate, often used in vital elements for space exploration"));
+		globalMarket.add(new Item("Platinum",50,"An uncommon silicate, used in many blueprints"));
+
+		//Isotopes
+		globalMarket.add(new Item("Carbon",6,"A common isotope, found in nearly everything"));
+		globalMarket.add(new Item("Thamium9",20,"An uncommon isotope, and a powerful energy source"));
+		globalMarket.add(new Item("Plutonium",40,"A rare isotope, used as a potent energy source"));
+		
+		//Neutrals
+		globalMarket.add(new Item("Gold",200,"A rare neutral, sold widely and found in many electronics"));
+		globalMarket.add(new Item("Nickel",137,"A common neutral, worth a good amount of money and used in armor plating"));
+		globalMarket.add(new Item("Iridium",96,"An uncommon neutral, a lustrous transition metal favored by traders"));
+		globalMarket.add(new Item("Copper",110,"An uncommon neutral, commonly found in electronics"));
+		globalMarket.add(new Item("Aluminium",165,"A rare neutral, frequnetly used in construction of space crafts and weapons"));
+		globalMarket.add(new Item("Emeril",275,"A rare neutral, it emits a small amount of radiation. Used in colonial stations"));		
+
+		//Precious
+		globalMarket.add(new Item("Omegon",309,"Dark matter element. A hugely powerful, largely unknown and entirely untested substance. It is extremely rare."));
+		globalMarket.add(new Item("Radnox",302,"Mysterious and valuable chemical resource."));
+		globalMarket.add(new Item("Murrine",302,"Valuable commodity known for it's charming qualities."));
+		globalMarket.add(new Item("Calium",288,"Calium is a rare substance, and can be found on extremely hostile planets."));
+		
+		
+		//Recipies
+		
+		
+			//Recipe for suspension fluid, 50x Carbon
+		List<Item> suspenList = new ArrayList<Item>();
+		for(int i = 0; i<50;i++){
+			suspenList.add(new Item("Carbon",6,"A common isotope, found in nearly everything"));
+		}
+		
+		globalMarket.add(new Blueprint("Suspension Fluid",1,"Non-reactive and pressure-resistant liquid. Vital to the manufacture of starship and exosuit technologies.", suspenList));
+			
+		
+			
+
+
+
+
+		return globalMarket;
+	}
+	
+	public List<Item> getGlobalMarket() {
+		return globalMarket;
+	}
+	public List<Item> getLocalMarket() {
+		return localMarket;
+	}
+	/**
+	 * Creates a new market for each locale. Simply grabs an item out of the global market database and generates
+	 * it using a range of values
+	 * @return
+	 */
+	public List<Item> createLocalMarket(){
+		List<Item> localMarket = new ArrayList<Item>();
+		Random rand = new Random();
+		for(Item i : globalMarket){
+			if(i.getPrice()<=rand.nextInt(330)){
+				localMarket.add(i);
+			}
+		}
+		return localMarket;
+	}
+	
+
+}
