@@ -94,11 +94,6 @@ public class Game {
 					shouldGeneratePlanet = true;
 					return true;
 				}
-				else{
-					System.out.println("You need one Warp Cell to travel, please craft it and try again");
-					shouldGeneratePlanet = false;
-					return true;
-				}
 				
 				
 			// Lists the player's inventory if it is not empty, does not cause a generation of a new planet

@@ -72,7 +72,7 @@ public class Market {
 			
 		}
 			// Add the recipe
-		allItems.put("SuspensionFluidBlueprint",new Blueprint("Suspension Fluid Blueprint",1100,"Non-reactive and pressure-resistant liquid. Vital to the manufacture of starship and exosuit technologies.", suspenList,allItems.get("SuspensionFluid")));
+		allItems.put("SuspensionFluidBlueprint",new Blueprint("Suspension Fluid",1100,"Non-reactive and pressure-resistant liquid. Vital to the manufacture of starship and exosuit technologies.", suspenList,allItems.get("SuspensionFluid")));
 			
 		
 			//Recipe for electron vapor , 1x Suspension Fluid and 100x Plutonium
@@ -83,7 +83,7 @@ public class Market {
 		
 		vaporList.add(allItems.get("SuspensionFluid"));
 //			 Add the recipe
-		allItems.put("ElectronVaporBlueprint",new Blueprint("Electron Vapor Blueprint",4950,"Captured cloud of ionised electrons. A fundamental component of many technologies, and often used in the creation of antimatter.",vaporList,allItems.get("Electron Vapor")));
+		allItems.put("ElectronVaporBlueprint",new Blueprint("Electron Vapor",4950,"Captured cloud of ionised electrons. A fundamental component of many technologies, and often used in the creation of antimatter.",vaporList,allItems.get("Electron Vapor")));
 		
 		
 		
@@ -98,7 +98,7 @@ public class Market {
 		antiList.add(allItems.get("Electron Vapor"));
 		
 			// Add the recipe
-		allItems.put("AntimatterBlueprint",new Blueprint("Antimatter Blueprint",5232,"Captured cloud of ionised electrons. A fundamental component of many technologies, and often used in the creation of antimatter.",vaporList,allItems.get("Antimatter")));
+		allItems.put("AntimatterBlueprint",new Blueprint("Antimatter",5232,"Captured cloud of ionised electrons. A fundamental component of many technologies, and often used in the creation of antimatter.",vaporList,allItems.get("Antimatter")));
 		
 			
 		
@@ -108,7 +108,7 @@ public class Market {
 			warpList.add(allItems.get("Thamium9"));
 		}
 		warpList.add(allItems.get("Antimatter"));
-		allItems.put("WarpCellBlueprint",new Blueprint("Warp Cell Blueprint",46750,"Warp Cells are used to charge starship Hyperdrives and to enable Faster Than Light (FTL) warp speeds.",antiList,allItems.get("Warp Cell")));
+		allItems.put("WarpCellBlueprint",new Blueprint("Warp Cell",46750,"Warp Cells are used to charge starship Hyperdrives and to enable Faster Than Light (FTL) warp speeds.",antiList,allItems.get("Warp Cell")));
 
 		
 

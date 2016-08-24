@@ -108,7 +108,7 @@ public class Market {
 			warpList.add(allItems.get("Thamium9"));
 		}
 		warpList.add(allItems.get("Antimatter"));
-		allItems.put("WarpCellBlueprint",new Blueprint("Warp Cell Blueprint",46750,"Warp Cells are used to charge starship Hyperdrives and to enable Faster Than Light (FTL) warp speeds.",antiList,allItems.get("Warp Cell")));
+		allItems.put("WarpCellBlueprint",new Blueprint("Warp Cell",46750,"Warp Cells are used to charge starship Hyperdrives and to enable Faster Than Light (FTL) warp speeds.",antiList,allItems.get("Warp Cell")));
 
 		
 
