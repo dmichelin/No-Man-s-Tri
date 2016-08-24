@@ -38,12 +38,6 @@ public class Player {
 	public List<Blueprint> getKnownBlueprints() {
 		return knownBlueprints;
 	}
-	public boolean addBlueprint(Blueprint blueprint){
-		if(blueprint!=null){
-			knownBlueprints.add(blueprint);
-			return true;
-		}else return false;
-	}
 	/**
 	 *  Returns the amount of money that the player has
 	 * @return

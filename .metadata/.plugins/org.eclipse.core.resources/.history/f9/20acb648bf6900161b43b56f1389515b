@@ -143,20 +143,9 @@ public class Game {
 				return true;
 			// Provides crafting functionality for the player
 			case "c":
-				player.addBlueprint((Blueprint)market.globalMarket.get("AntimatterBlueprint"));
+				player.addBlueprint(market.globalMarket.get("AntimatterBlueprint"))
 				System.out.println("What would you like to craft? Enter the number of the item you want to create");
-				int i = 0;
-				for(Blueprint b : player.getKnownBlueprints()){
-					System.out.println(i + " - " + b.getName() + " " + b.getDescription());
-				}
-				int response = playerInput.nextInt();
-				if(player.getKnownBlueprints().size()>response){
-					if(player.addItem(player.getKnownBlueprints().get(response).craft(player))){
-						System.out.println("Item crafted");
-					}else System.out.println("Item not crafted");
-				}else System.out.println("You entered a number outside of available responses");
-				shouldGeneratePlanet = false;
-				return true;
+				for(Blueprint b : )
 				
 		}
 		

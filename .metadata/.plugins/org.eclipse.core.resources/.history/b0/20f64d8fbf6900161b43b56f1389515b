@@ -27,12 +27,17 @@ public class Blueprint extends Item {
 	
 	public Item craft(Player player){
 		List<Item> inventory = player.getInventory();
-		
+		for(Item i : itemsRequired){
+			System.out.println(i.getName()+" is needed");
+		}
+		System.out.println(inventory.containsAll(itemsRequired));
 		if(inventory.containsAll(itemsRequired)){
 			inventory.removeAll(itemsRequired);
+			System.out.println("Crafting item "+ getName());
 			return output;
 		}
 		else{
+			System.out.println("Could not craft");
 			return null;
 		}
 	}

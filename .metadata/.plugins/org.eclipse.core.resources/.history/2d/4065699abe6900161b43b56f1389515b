@@ -133,8 +133,7 @@ public class Market {
 		Random rand = new Random();
 		List<Item> globMark = new ArrayList<Item>(globalMarket.values());
 		for(Item i : globMark){
-			if(i.getPrice()<=rand.nextInt(330)&&!(i instanceof Blueprint)) // Just checking to make sure the store is not populated with any blueprints
-			{
+			if(i.getPrice()<=rand.nextInt(330)){
 				localMarket.add(i);
 			}
 		}

@@ -141,23 +141,33 @@ public class Game {
 				}
 				shouldGeneratePlanet = false;
 				return true;
-			// Provides crafting functionality for the player
+			// Tests crafting
 			case "c":
-				player.addBlueprint((Blueprint)market.globalMarket.get("AntimatterBlueprint"));
-				System.out.println("What would you like to craft? Enter the number of the item you want to create");
-				int i = 0;
-				for(Blueprint b : player.getKnownBlueprints()){
-					System.out.println(i + " - " + b.getName() + " " + b.getDescription());
+				for(int i = 0; i<50;i++){
+					player.addItem(market.globalMarket.get("Carbon"));
 				}
-				int response = playerInput.nextInt();
-				if(player.getKnownBlueprints().size()>response){
-					if(player.addItem(player.getKnownBlueprints().get(response).craft(player))){
-						System.out.println("Item crafted");
-					}else System.out.println("Item not crafted");
-				}else System.out.println("You entered a number outside of available responses");
+				Blueprint print = (Blueprint) market.globalMarket.get("SuspensionFluidBlueprint");
+				
+				Item item = print.craft(player);
+			
+				player.addItem(item);
+				
+				for(int i = 0; i<50;i++){
+					player.addItem(market.globalMarket.get("Plutonium"));
+				}
+				
+				
+				
+				print = (Blueprint) market.globalMarket.get("ElectronVaporBlueprint");
+				item = print.craft(player);
+				//System.out.println(item.getName());
+				player.addItem(item);
+				
+				print = (Blueprint) market.globalMarket.get("WarpCellBlueprint");
+				item = print.craft(player);
+				player.addItem(item);
 				shouldGeneratePlanet = false;
 				return true;
-				
 		}
 		
 		return false;
@@ -166,11 +176,10 @@ public class Game {
 	 * Handles creating the environment for the player
 	 */
 	private void createWorld(){
-		//shouldGeneratePlanet is either true or false depending on what the user inputs during handleInput();
 		if(shouldGeneratePlanet){
 			Random distanceGenerator = new Random();
 			currentPlanet = planetGenerator.generatePlanet(planetsTravelledTo);
-			distanceTravelled+=distanceGenerator.nextInt(500) ; // Creates a random distance length travelled
+			distanceTravelled+=distanceGenerator.nextInt(500) ;
 			planetsTravelledTo++;
 			localMarket = market.createLocalMarket();
 		}

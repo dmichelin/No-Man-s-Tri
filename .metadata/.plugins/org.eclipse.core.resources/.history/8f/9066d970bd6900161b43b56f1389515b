@@ -19,7 +19,6 @@ public class Player {
 	private int maxInventorySize; // Default is 10
 	private int distanceTravelled;
 	private Item equippedItem;
-	private List<Blueprint> knownBlueprints;
 	
 	/**
 	 *  For constructing a player, default values are for name and age only
@@ -32,17 +31,7 @@ public class Player {
 		maxHealth = 10;
 		maxInventorySize = 10;
 		inventory = new ArrayList<Item>();
-		knownBlueprints = new ArrayList<Blueprint>();
 		
-	}
-	public List<Blueprint> getKnownBlueprints() {
-		return knownBlueprints;
-	}
-	public boolean addBlueprint(Blueprint blueprint){
-		if(blueprint!=null){
-			knownBlueprints.add(blueprint);
-			return true;
-		}else return false;
 	}
 	/**
 	 *  Returns the amount of money that the player has

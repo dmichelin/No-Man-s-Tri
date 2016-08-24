@@ -41,7 +41,7 @@ public class Player {
 	public boolean addBlueprint(Blueprint blueprint){
 		if(blueprint!=null){
 			knownBlueprints.add(blueprint);
-			return true;
+			return true
 		}else return false;
 	}
 	/**

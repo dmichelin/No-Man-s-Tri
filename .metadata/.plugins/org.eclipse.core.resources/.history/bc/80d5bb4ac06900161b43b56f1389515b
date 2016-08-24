@@ -149,14 +149,6 @@ public class Game {
 				for(Blueprint b : player.getKnownBlueprints()){
 					System.out.println(i + " - " + b.getName() + " " + b.getDescription());
 				}
-				int response = playerInput.nextInt();
-				if(player.getKnownBlueprints().size()>response){
-					if(player.addItem(player.getKnownBlueprints().get(response).craft(player))){
-						System.out.println("Item crafted");
-					}else System.out.println("Item not crafted");
-				}else System.out.println("You entered a number outside of available responses");
-				shouldGeneratePlanet = false;
-				return true;
 				
 		}
 		

@@ -105,9 +105,9 @@ public class Market {
 			// Recipe for Warp Cell
 		List<Item> warpList = new ArrayList<Item>();
 		for(int i = 0; i<100;i++){
-			warpList.add(allItems.get("Thamium9"));
+			warpList.add(new Item("Plutonium",40,"A rare isotope, used as a potent energy source"));
 		}
-		warpList.add(allItems.get("Antimatter"));
+		warpList.add(new Item("Antimatter",5232,"Captured cloud of ionised electrons. A fundamental component of many technologies, and often used in the creation of antimatter."));
 		allItems.put("WarpCellBlueprint",new Blueprint("Warp Cell",46750,"Warp Cells are used to charge starship Hyperdrives and to enable Faster Than Light (FTL) warp speeds.",antiList,allItems.get("Warp Cell")));
 
 		
@@ -133,8 +133,7 @@ public class Market {
 		Random rand = new Random();
 		List<Item> globMark = new ArrayList<Item>(globalMarket.values());
 		for(Item i : globMark){
-			if(i.getPrice()<=rand.nextInt(330)&&!(i instanceof Blueprint)) // Just checking to make sure the store is not populated with any blueprints
-			{
+			if(i.getPrice()<=rand.nextInt(330)){
 				localMarket.add(i);
 			}
 		}

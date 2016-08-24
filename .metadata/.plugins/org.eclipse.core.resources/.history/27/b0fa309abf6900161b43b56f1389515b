@@ -30,9 +30,11 @@ public class Blueprint extends Item {
 		
 		if(inventory.containsAll(itemsRequired)){
 			inventory.removeAll(itemsRequired);
+			System.out.println("Crafting item "+ getName());
 			return output;
 		}
 		else{
+			System.out.println("Could not craft");
 			return null;
 		}
 	}
