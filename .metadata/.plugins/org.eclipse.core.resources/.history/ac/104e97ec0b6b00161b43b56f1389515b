@@ -107,24 +107,11 @@ public class Game {
 				List<Item> inventory = player.getInventory();
 				if(!inventory.isEmpty())
 				{
-					// Create a table of all of the items and their quantity
-					Hashtable<String,Integer> inventoryTable = new Hashtable<String, Integer>();
+					Hashtable<String,Integer> inventoryMap = new Hashtable<String, Integer>;
 					System.out.println("");
-					// Construct the table
 					for(Item i : inventory){
-						String name = i.getName();
-						if(!inventoryTable.containsKey(name)){
-							inventoryTable.put(name, 1); // Default quantity of 1
-						}else{
-							inventoryTable.put(name, inventoryTable.get(name)+1); // Add 1 to the quantity of that item
-						}
+						System.out.println(i.getName());
 					}
-					
-					//For all the items, list their quantity
-					for (String item : inventoryTable.keySet()){
-						System.out.println(item + " x "+ inventoryTable.get(item));
-					}
-					
 				}else{
 					System.out.println("Your inventory is empty");
 				}

@@ -116,7 +116,7 @@ public class Player {
 		return null;
 	}
 	/**
-	 * Removes an item from an inventory. Searches through the inventory by name
+	 * Removes an item from an inventory
 	 * @param item
 	 * @return
 	 */
